@@ -1,76 +1,56 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Love You Queenie</title>
+<title>For Queenie</title>
 <style>
-/* Full screen pink gradient */
 body {
   margin: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #ffdde1, #fceabb);
   font-family: 'Arial', sans-serif;
   overflow: hidden;
 }
 
-/* Glowing text */
+/* Caption */
 h1 {
   font-size: 3rem;
-  color: white;
+  color: #ff4d6d;
   text-align: center;
-  animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease forwards;
+  margin-top: 20px;
+  animation: fadeIn 2s ease forwards;
   opacity: 0;
 }
 
-/* Glow animation */
-@keyframes glow {
-  from { text-shadow: 0 0 10px white, 0 0 20px #ff4d6d; }
-  to   { text-shadow: 0 0 20px white, 0 0 30px #ff1e56; }
-}
-
-/* Fade in */
+/* Fade in animation for text */
 @keyframes fadeIn {
   to { opacity: 1; }
 }
 
-/* Hearts floating */
-.heart {
-  position: absolute;
-  font-size: 20px;
-  animation: float 5s linear infinite;
+/* Flower image styling */
+.flower {
+  width: 300px;
+  height: 300px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Red_Rose_Flower.JPG') no-repeat center/contain;
+  animation: pulse 3s infinite alternate;
 }
 
-@keyframes float {
-  0% { transform: translateY(100vh) scale(1); opacity: 1; }
-  50% { transform: translateY(50vh) scale(1.5); opacity: 0.8; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+/* Simple pulse animation for flower */
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
 </style>
 </head>
 <body>
 
-<h1>I love you Queenie 💖</h1>
-
-<script>
-// Generate floating hearts
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "💗";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
-  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}
-
-// Continuously create hearts
-setInterval(createHeart, 300);
-</script>
+<div class="flower"></div>
+<h1>For Queenie</h1>
 
 </body>
 </html>
