@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>for queeenie</title>
+<title>for queeeenie</title>
+
 <style>
 body {
   margin: 0;
@@ -13,44 +14,93 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #ffdde1, #fceabb);
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   overflow: hidden;
+}
+
+/* Flower Image */
+.flower {
+  width: 260px;
+  animation: float 4s ease-in-out infinite;
+  z-index: 2;
 }
 
 /* Caption */
 h1 {
   font-size: 3rem;
   color: #ff4d6d;
-  text-align: center;
   margin-top: 20px;
-  animation: fadeIn 2s ease forwards;
   opacity: 0;
+  animation: fadeIn 2s ease forwards 1s;
+  z-index: 2;
 }
 
-/* Fade-in animation for caption */
+/* Glow effect */
+h1::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 10px;
+  margin: 10px auto 0;
+  background: radial-gradient(circle, #ff4d6d, transparent);
+  filter: blur(8px);
+}
+
+/* Animations */
 @keyframes fadeIn {
   to { opacity: 1; }
 }
 
-/* Flower container */
-.flower {
-  width: 300px;
-  height: 300px;
-  background: url('https://images.unsplash.com/photo-1601758173923-32f3d25c5b6e?auto=format&fit=crop&w=300&q=80') no-repeat center/contain;
-  animation: pulse 3s infinite alternate;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
-/* Pulse animation for flower */
-@keyframes pulse {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+/* Falling petals */
+.petal {
+  position: absolute;
+  top: -10px;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 105, 180, 0.7);
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
 }
 </style>
 </head>
+
 <body>
 
-<div class="flower"></div>
-<h1>for queeenie</h1>
+<!-- Transparent PNG Flower -->
+<img class="flower" src="https://pngimg.com/uploads/rose/rose_PNG649.png" alt="Flower">
+
+<!-- Text -->
+<h1> for queeeenie<3</h1>
+
+<script>
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+
+  petal.style.left = Math.random() * window.innerWidth + "px";
+  petal.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 8000);
+}
+
+setInterval(createPetal, 300);
+</script>
 
 </body>
 </html>
