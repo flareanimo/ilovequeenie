@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>for queeeenie</title>
 
+<!-- Girlie Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
@@ -14,22 +17,24 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #ffdde1, #fceabb);
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
 
 /* Flower Image */
 .flower {
-  width: 260px;
+  width: 240px;
   animation: float 4s ease-in-out infinite;
   z-index: 2;
 }
 
 /* Caption */
 h1 {
-  font-size: 3rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2rem; /* smaller */
   color: #ff4d6d;
-  margin-top: 20px;
+  margin-top: 15px;
+  letter-spacing: 1px;
   opacity: 0;
   animation: fadeIn 2s ease forwards 1s;
   z-index: 2;
@@ -39,11 +44,11 @@ h1 {
 h1::after {
   content: "";
   display: block;
-  width: 60%;
-  height: 10px;
-  margin: 10px auto 0;
+  width: 50%;
+  height: 8px;
+  margin: 8px auto 0;
   background: radial-gradient(circle, #ff4d6d, transparent);
-  filter: blur(8px);
+  filter: blur(6px);
 }
 
 /* Animations */
@@ -53,7 +58,7 @@ h1::after {
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-12px); }
   100% { transform: translateY(0px); }
 }
 
@@ -78,11 +83,9 @@ h1::after {
 
 <body>
 
-<!-- Transparent PNG Flower -->
 <img class="flower" src="https://pngimg.com/uploads/rose/rose_PNG649.png" alt="Flower">
 
-<!-- Text -->
-<h1> for queeeenie<3</h1>
+<h1>for queeeenie &lt;3</h1>
 
 <script>
 function createPetal() {
